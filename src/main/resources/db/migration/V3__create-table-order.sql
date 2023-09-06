@@ -1,6 +1,6 @@
 CREATE TABLE orders (
-    id INTEGER NOT NULL PRIMARY KEY UNIQUE,
-    orderNumber BIGINT UNIQUE,
+    id SERIAL PRIMARY KEY,
+    orderNumber INTEGER UNIQUE,
     costumer TEXT,
     amount NUMERIC,
     status TEXT,
