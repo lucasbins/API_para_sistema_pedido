@@ -7,7 +7,9 @@ API para um sistema simples de pedido e cliente
 - Maven
 
 ## Banco de dados
-- Postgress
+- Postgress (para o funcionamento deve ter instalado docker em sua maquina.)
 
-
-* para o funcionamento deve ter instalado docker em sua maquina.
+## Instruções
+- Clone o repositorio
+- Abra o projeto com Intellij ou VScode
+- instale as dependencias utilizando o Maven
