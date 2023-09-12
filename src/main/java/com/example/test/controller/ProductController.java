@@ -3,7 +3,6 @@ package com.example.test.controller;
 import com.example.test.dto.ProductDTO;
 import com.example.test.model.Product;
 import com.example.test.service.ProductService;
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
