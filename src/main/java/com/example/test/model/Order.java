@@ -21,8 +21,6 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long numberOrder;
-
     @ManyToOne
     @JoinColumn(name = "costumer")
     private Costumer costumer;
@@ -36,5 +34,10 @@ public class Order {
     protected void onCreate() {
         ZoneId zoneId = ZoneId.of("America/Sao_Paulo");
         dateOrder = LocalDateTime.now(zoneId);
+    }
+
+    public Order(Costumer costumer, Float amount){
+        this.costumer = costumer;
+        this.amount = amount;
     }
 }
