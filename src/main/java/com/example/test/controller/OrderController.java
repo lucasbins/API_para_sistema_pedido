@@ -53,4 +53,24 @@ public class OrderController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Order> editOrder(@RequestParam Long id, @RequestBody OrderDTO data){
+        if(id == null) return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        if(data == null) return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+
+        Optional<Order> order = this.service.findById(id);
+
+        if(order.isPresent()){
+            Order newOrder = order.get();
+
+            newOrder.setAmount(data.amount());
+
+            this.service.saveOrder(newOrder);
+
+            return ResponseEntity.status(HttpStatus.OK).body(newOrder);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
 }
